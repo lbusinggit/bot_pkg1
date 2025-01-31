@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    
+    <!-- Colours for use in URDF declared below:-->
+
+    <material name="white">
+        <color rgba="1 1 1 1" />
+    </material>
+
+    <material name="black">
+        <color rgba="0 0 0 1" />
+    </material>
+
+    <material name="yellow">
+        <color rgba="1 1 0 1" />
+    </material>
+
+    <material name="grey">
+        <color rgba="0.5 0.5 0.5 1" />
+    </material>
+
+    <material name="blue">
+        <color rgba="0 0 1 1" />
+    </material>
+
+    <material name="green">
+        <color rgba="0 1 0 1" />
+    </material>
+
+    <material name="red">
+        <color rgba="1 0 0 1" />
+    </material>
+
+    <material name="orange">
+        <color rgba="1 0.65 0 1" />
+    </material>
+
+    <!-- Links and Joints: -->
+    <!-- URDF uses meters as units.-->
+
+    <!-- Base Link: -->   
+    <link name="base_link">
+        <origin xyz="0 0 0.035"/>
+    </link>
+
+    <!-- Chassis Link: -->
+    <joint name="chassis_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="chassis_link"/>
+        <origin xyz="-0.125 0 0.025"/>
+
+    </joint>
+
+    <link name="chassis_link">
+        <visual>
+        <origin xyz="0.125 0 -0.025"/>
+        <geometry>
+            <box size= "0.25 0.16 0.05"/>
+        </geometry>
+        <material name="black"/>
+        </visual>
+
+        <collision>
+        <origin xyz="0.125 0 -0.025"/>
+        <geometry>
+            <box size= "0.25 0.16 0.05"/>
+        </geometry>
+        </collision>
+    </link>
+
+    <!-- Wheel Links: -->
+
+    <!-- Left Wheel Links: -->
+
+    <!-- REAR -->
+    <joint name="left_wheel_rear_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="left_wheel_rear_link"/>
+        <origin xyz="-0.0635 0.08 0" rpy="-${pi/2} 0 0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="left_wheel_rear_link">
+        <visual>
+        <origin xyz="0 0 0.01425"/>
+            <geometry>
+                <cylinder radius="0.033" length="0.0285"/>
+            </geometry>
+            <material name="yellow"/>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.01425"/>
+            <geometry>
+                <cylinder radius="0.033" length="0.0285"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- FWD -->
+    <joint name="left_wheel_fwd_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="left_wheel_fwd_link"/>
+        <origin xyz="0.0635 0.08 0" rpy="-${pi/2} 0 0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="left_wheel_fwd_link">
+        <visual>
+        <origin xyz="0 0 0.01425"/>
+            <geometry>
+                <cylinder radius="0.033" length="0.0285"/>
+            </geometry>
+            <material name="yellow"/>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.01425"/>
+            <geometry>
+                <cylinder radius="0.033" length="0.0285"/>
+            </geometry>
+        </collision>
+    </link>
+
+        <!-- Right Wheel Links: -->
+
+    <!-- REAR -->
+    <joint name="right_wheel_rear_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="right_wheel_rear_link"/>
+        <origin xyz="-0.0635 -0.08 0" rpy="${pi/2} 0 0"/>
+        <axis xyz="0 0 -1"/>
+    </joint>
+
+    <link name="right_wheel_rear_link">
+        <visual>
+        <origin xyz="0 0 0.01425"/>
+            <geometry>
+                <cylinder radius="0.033" length="0.0285"/>
+            </geometry>
+            <material name="yellow"/>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.01425"/>
+            <geometry>
+                <cylinder radius="0.033" length="0.0285"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- FWD -->
+    <joint name="right_wheel_fwd_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="right_wheel_fwd_link"/>
+        <origin xyz="0.0635 -0.08 0" rpy="${pi/2} 0 0"/>
+        <axis xyz="0 0 -1"/>
+    </joint>
+
+    <link name="right_wheel_fwd_link">
+        <visual>
+        <origin xyz="0 0 0.01425"/>
+            <geometry>
+                <cylinder radius="0.033" length="0.0285"/>
+            </geometry>
+            <material name="yellow"/>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0.01425"/>
+            <geometry>
+                <cylinder radius="0.033" length="0.0285"/>
+            </geometry>
+        </collision>
+    </link>
+
+</robot>
