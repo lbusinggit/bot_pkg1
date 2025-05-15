@@ -14,8 +14,8 @@
             <right_joint>right_wheel_fwd_joint</right_joint>
 
             <!-- Wheel parameters -->
-            <wheel_separation>0.16</wheel_separation>  <!-- Distance between left and right wheels -->
-            <wheel_diameter>0.07</wheel_diameter>       <!-- Diameter of the wheels -->
+            <wheel_separation>0.20</wheel_separation>  <!-- Distance between left and right wheels -->
+            <wheel_diameter>0.10</wheel_diameter>       <!-- Diameter of the wheels -->
 
             <!-- Drive parameters -->
             <max_wheel_torque>100</max_wheel_torque>   

@@ -81,7 +81,7 @@
     <joint name="left_wheel_rear_joint" type="continuous">
         <parent link="base_link"/>
         <child link="left_wheel_rear_link"/>
-        <origin xyz="-0.125 0.10 0" rpy="-${pi/2} 0 0"/>
+        <origin xyz="-0.125 0.106 0" rpy="-${pi/2} 0 0"/>
         <axis xyz="0 0 1"/>
     </joint>
 
@@ -97,7 +97,7 @@
         <collision>
             <origin xyz="0 0 0.01425"/>
             <geometry>
-                <cylinder radius="0.05" length="0.04"/>
+                <sphere radius="0.05" />
             </geometry>
         </collision>
 
@@ -112,7 +112,7 @@
     <joint name="left_wheel_fwd_joint" type="continuous">
         <parent link="base_link"/>
         <child link="left_wheel_fwd_link"/>
-        <origin xyz="0.125 0.10 0" rpy="-${pi/2} 0 0"/>
+        <origin xyz="0.125 0.106 0" rpy="-${pi/2} 0 0"/>
         <axis xyz="0 0 1"/>
     </joint>
 
@@ -128,7 +128,7 @@
         <collision>
             <origin xyz="0 0 0.01425"/>
             <geometry>
-                <cylinder radius="0.05" length="0.04"/>
+                <sphere radius="0.05"/>
             </geometry>
         </collision>
 
@@ -145,7 +145,7 @@
     <joint name="right_wheel_rear_joint" type="continuous">
         <parent link="base_link"/>
         <child link="right_wheel_rear_link"/>
-        <origin xyz="-0.125 -0.10 0" rpy="${pi/2} 0 0"/>
+        <origin xyz="-0.125 -0.106 0" rpy="${pi/2} 0 0"/>
         <axis xyz="0 0 -1"/>
     </joint>
 
@@ -161,7 +161,7 @@
         <collision>
             <origin xyz="0 0 0.01425"/>
             <geometry>
-                <cylinder radius="0.05" length="0.04"/>
+                <sphere radius="0.05"/>
             </geometry>
         </collision>
 
@@ -177,7 +177,7 @@
     <joint name="right_wheel_fwd_joint" type="continuous">
         <parent link="base_link"/>
         <child link="right_wheel_fwd_link"/>
-        <origin xyz="0.125 -0.10 0" rpy="${pi/2} 0 0"/>
+        <origin xyz="0.125 -0.106 0" rpy="${pi/2} 0 0"/>
         <axis xyz="0 0 -1"/>
     </joint>
 
@@ -193,7 +193,7 @@
         <collision>
             <origin xyz="0 0 0.01425"/>
             <geometry>
-                <cylinder radius="0.05" length="0.04"/>
+                <sphere radius="0.05"/>
             </geometry>
         </collision>
 
