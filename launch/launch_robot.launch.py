@@ -58,7 +58,7 @@ def generate_launch_description():
     delayed_joint_broad_spawner = RegisterEventHandler(
         OnProcessStart(
             target_action=controller_manager,
-            on_exit=[joint_broad_spawner]
+            on_start=[joint_broad_spawner]
         )
     )
 
